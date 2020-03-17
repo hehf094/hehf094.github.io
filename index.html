@@ -61,7 +61,7 @@
 			</ul>
 		</nav>
                 <nav>
-		总文章数2
+		总文章数3
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -155,6 +155,73 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-Xpath 的简单练习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/17/Xpath%20%E7%9A%84%E7%AE%80%E5%8D%95%E7%BB%83%E4%B9%A0/">Xpath 的简单练习</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/17/Xpath%20%E7%9A%84%E7%AE%80%E5%8D%95%E7%BB%83%E4%B9%A0/" class="archive-article-date">
+  	<time datetime="2020-03-17T15:43:27.739Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Xpath-的简单练习"><a href="#Xpath-的简单练习" class="headerlink" title="Xpath 的简单练习"></a>Xpath 的简单练习</h1><p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcxckj58ltj31020lak3q.jpg" alt=""></p>
+<p><strong>需求：根据输入的起始页码，获取好段子网的段子名称、内容和评价，并保存在文档中。</strong></p>
+<h2 id="定义主函数，构建请求"><a href="#定义主函数，构建请求" class="headerlink" title="定义主函数，构建请求"></a>定义主函数，构建请求</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    start_page = int(input(<span class="string">'请输入开始页码：'</span>))</span><br><span class="line">    end_page = int(input(<span class="string">'请输入结束页码：'</span>))</span><br><span class="line">    url = <span class="string">'http://www.haoduanzi.com/category/?1-&#123;&#125;.html'</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> page <span class="keyword">in</span> range(start_page,end_page+<span class="number">1</span>):  <span class="comment">## 不要忘了+1</span></span><br><span class="line">        request = handle_request(url,page)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2020/03/17/Xpath%20%E7%9A%84%E7%AE%80%E5%8D%95%E7%BB%83%E4%B9%A0/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/17/Xpath%20%E7%9A%84%E7%AE%80%E5%8D%95%E7%BB%83%E4%B9%A0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-我的第一篇博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
