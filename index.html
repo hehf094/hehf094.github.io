@@ -63,7 +63,7 @@
 			</ul>
 		</nav>
                 <nav>
-		总文章数5
+		总文章数3
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -169,7 +169,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/02/%E7%AC%AC%E4%B8%80%E8%AF%BE%E7%AC%94%E8%AE%B0/">Xpath练习</a>
+      <a class="article-title" href="/2020/04/02/%E7%AC%AC%E4%B8%80%E8%AF%BE%E7%AC%94%E8%AE%B0/">Python基础课第一课</a>
     </h1>
   
 
@@ -182,8 +182,130 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>[toc](python 基础课  第一课  )</p>
-        
+        <a id="more"></a>
+
+<h4 id="计算机的基本概念"><a href="#计算机的基本概念" class="headerlink" title="计算机的基本概念"></a>计算机的基本概念</h4><h5 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h5><blockquote>
+<p>接收和处理数字化信息，进行数学计算和逻辑计算，可以接收指令，自动执行程序，还可以将结果进行显示和存储的一种电子化设备。计算机的发明者是约翰·冯·诺依曼。</p>
+</blockquote>
+<h5 id="组成"><a href="#组成" class="headerlink" title="组成"></a>组成</h5><blockquote>
+<p>主要包括硬件和软件两部分，硬件具体包括，控制器、存储器、运算器、输入输出设备等。软件如操作系统，应用软件等。</p>
+</blockquote>
+<h4 id="计算机语言"><a href="#计算机语言" class="headerlink" title="计算机语言"></a>计算机语言</h4><h5 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h5><blockquote>
+<p>人和计算机交互的媒介。就是各种代码，包括各种字符和语法规则组成的计算机指令。</p>
+</blockquote>
+<h5 id="解释型语言和编译型语言"><a href="#解释型语言和编译型语言" class="headerlink" title="解释型语言和编译型语言"></a>解释型语言和编译型语言</h5><blockquote>
+<p>解释型语言是相对于编译型语言而言的。顾名思义，它需要解释。不是直接翻译成机器语言，而是先翻译成中间代码，再由解释器对中间代码进行解释运行。</p>
+<p>编译型语言是在程序执行之前，通过专门的编译器，把程序翻译成机器语言，区别于解释型语言，运行时不需要翻译。特点是快但是夸平台性不好。</p>
+</blockquote>
+<h4 id="交互方式"><a href="#交互方式" class="headerlink" title="交互方式"></a>交互方式</h4><h5 id="交互方式的种类"><a href="#交互方式的种类" class="headerlink" title="交互方式的种类"></a>交互方式的种类</h5><blockquote>
+<p>命令行交互（TUI）</p>
+<p>图形界面交互（GUI）</p>
+</blockquote>
+<h5 id="常用DOS命令"><a href="#常用DOS命令" class="headerlink" title="常用DOS命令"></a>常用DOS命令</h5><p><strong>md/mkdir</strong></p>
+<blockquote>
+<p>作用：创建一个子目录（make directory）。<br>语法：md[C:][path]subPath〉</p>
+</blockquote>
+<p><strong>cd</strong></p>
+<blockquote>
+<p>作用：改变或显示当前目录（change directory）。<br>语法：cd[C:][path]<br>PS：路径可以使用绝对路径和相对路径两种。<br>cd\ 表示退回到根目录。<br>cd.. 表示退回到上级目录。<br>如果只有cd而没有参数，则只显示当前路径。<br>注意：子目录中一定有两个“特殊目录”，即“.”“..”，其中一点表示当前目录，两点表示上一层目录。<br>从简单实用的角度来看，我们只要学会逐层进入（cd 下一层某目录名），和逐层退出（cd..）就可以解决所有问题。</p>
+</blockquote>
+<p><strong>rd</strong></p>
+<blockquote>
+<p>作用：删除空子目录（remove directory）。<br>语法：rd [c:][path]<br>PS：rd是专门删除空子目录的命令。<br>del 删除文件命令。<br>注意两条：一是不能删除非空目录；二是不能删除当前目录。</p>
+</blockquote>
+<p><strong>dir</strong></p>
+<blockquote>
+<p>作用：主要用来显示一个目录下的文件和子目录。(directory)<br>语法：dir [C:][path][filename][/o][/s][/p][/w][/a]<br>PS：斜杠表示后面的内容是参数。<br>/p 显示信息满一屏时，暂停显示，按任意键后显示下一屏<br>/o 排序显示。o后面可以接不同意义的字母<br>/w 只显示文件名目录名，每行五个文件名。即宽行显示<br>/s 将目录及子目录的全部目录文件都显示<br>/a 显示隐藏文件</p>
+</blockquote>
+<p><strong>path</strong></p>
+<blockquote>
+<p>作用：设备可执行文件的搜索路径，只对文件有效。<br>语法：path[盘符1：][路径1][盘符2：][路径2]…<br>PS：当运行一个可执行文件时，dos会先在当前目录中搜索该文件，若找到则运行之；若找不到该文件，则根据path命令所设置的路径，顺序逐条地到目录中搜索该文件</p>
+</blockquote>
+<p><strong>tree</strong></p>
+<blockquote>
+<p>作用：显示指定驱动器上所有目录路径和这些目录下的所有文件名。<br>语法：tree [盘符：][/f][&gt;prn]</p>
+</blockquote>
+<p><strong>deltree</strong></p>
+<blockquote>
+<p>作用：删除目录树。<br>语法：DELTREE [C1:][path1]<br>PS：这个命令将整个指定目录树全部消灭，而不管它是否是只读、隐藏与否。使用应特别小心。它是一个危险命令。</p>
+</blockquote>
+<h4 id="文本文件和字符集"><a href="#文本文件和字符集" class="headerlink" title="文本文件和字符集"></a>文本文件和字符集</h4><h5 id="文本文件"><a href="#文本文件" class="headerlink" title="文本文件"></a>文本文件</h5><blockquote>
+<p>纯文本（单纯文字）、富文本（文字、图片、音乐等）</p>
+</blockquote>
+<h5 id="常见字符集"><a href="#常见字符集" class="headerlink" title="常见字符集"></a>常见字符集</h5><blockquote>
+<p>GBK：汉字内码扩展规范，称GBK。GBK是对GB 2312-80进行的扩展, 总计拥有 23940 个码位，共收入21886个汉字和图形符号，其中汉字（包括部首和构件）21003 个，图形符号883 个。</p>
+<p>UTF-8：是万维网的最主要的编码形式。</p>
+<p>ASCII：ASCII一共定义了128个字符,包括33个控制字符,和95个可显示字符。ASCII码为单字节,用7位二进制数表示，由于计算机1个字节是8位二进制数，所以最高位为0，即<code>00000000-01111111</code>或<code>0x00-0x7F</code>。</p>
+<p>字符集的编码和解码</p>
+<p>编码：给计算机看的，encode</p>
+<p>解码：给人看的，decode</p>
+</blockquote>
+<h4 id="进制"><a href="#进制" class="headerlink" title="进制"></a>进制</h4><h5 id="进制类型"><a href="#进制类型" class="headerlink" title="进制类型"></a>进制类型</h5><blockquote>
+<p>二进制、十进制、八进制、十六进制，x进制就是逢x进位，原理都一样。人有十根手指头，所以我们常用的是十进制，计算机底层只能判断有电还是没电，也就是两种状态，定义为0和1，所以选择的是二进制。（未来量子计算机就不知道了）</p>
+<p>那为什么会有其他的进制呢？</p>
+<p>二进制运算简单，但是位数长，所以计算机实际采用的是十六进制。小型机引用八进制。</p>
+<p>位权：各位数字所表示值的大小不仅与该数字本身的大小有关，还与该数字所在的位置有关，我们称这关系为数的位权。</p>
+<p>十进制数的位权是以10为底的幂，二进制数的位权是以2为底的幂，十六进制数的位权是以16为底的幂。数位由高向低，以降幂的方式排列。</p>
+<blockquote>
+<p>举例：</p>
+<p>一个十进制数110，其中百位上的1表示1个10^2，既100，十位的1表示1个10^1，即10，个位的0表示0个10^0，即0。</p>
+<p>一个二进制数110，其中高位的1表示1个2^2，即4，低位的1表示1个2^1，即2，最低位的0表示0个2^0，即0。</p>
+<p>一个十六进制数110，其中高位的1表示1个16^2，即256，低位的1表示1个16^1，即16，最低位的0表示0个16^0，即0。</p>
+</blockquote>
+</blockquote>
+<h5 id="进制转换"><a href="#进制转换" class="headerlink" title="进制转换"></a>进制转换</h5><blockquote>
+<p>二进制数、十六进制数转换为十进制数（按权求和）</p>
+<p>例如：把（1001.01)2 二进制计算。</p>
+<p>解：（1001.01）2</p>
+<p>=8<em>1+4<em>0+2</em>0+1*1+0</em>(1/2)+1*(1/4)</p>
+<p>=8+0+0+1+0+0.25</p>
+<p>=9.25</p>
+<p>把（38A.11)16转换为十进制数</p>
+<p>解：（38A.11)16</p>
+<p>=3×16的2次方+8×16的1次方+10×16的0次方+1×16的-1次方+1×16的-2次方</p>
+<p>=768+128+10+0.0625+0.0039</p>
+<p>=906.0664</p>
+</blockquote>
+<blockquote>
+<p>十进制数转换为二进制数，十六进制数（除2/16取余法）</p>
+<p>例：将25转换为二进制数</p>
+<p>解：25÷2=12 余数1</p>
+<p>12÷2=6 余数0</p>
+<p>6÷2=3 余数0</p>
+<p>3÷2=1 余数1</p>
+<p>1÷2=0 余数1</p>
+<p>所以25=(11001)2</p>
+<p>例：将25转换为十六进制数</p>
+<p>解：25÷16=1 余数9</p>
+<p>1÷16=0 余数1</p>
+<p>所以25=(19)16</p>
+</blockquote>
+<blockquote>
+<p>二进制数与十六进制数之间的转换</p>
+<p>十六进制数转换成二进制数，只要将每一位十六进制数用对应的4位二进制数替代即可――简称位分四位</p>
+<p>例：将（4AF8B)16转换为二进制数.</p>
+<p>解： 4 A F 8 B</p>
+<p>0100 1010 1111 1000 1011</p>
+<p>所以（4AF8B)16=(1001010111110001011)2</p>
+</blockquote>
+<h5 id="计算机单位"><a href="#计算机单位" class="headerlink" title="计算机单位"></a>计算机单位</h5><blockquote>
+<p>位（bit）：二进制数中的一个数位，可以是0或者1，是计算机中数据的最小单位。</p>
+<p>字节（Byte，B）：计算机中数据的基本单位，每8位组成一个字节。各种信息在计算机中存储、处理至少需要一个字节。例如，一个ASCII码用一个字节表示，一个汉字用两个字节表示。</p>
+<p>计算机存储单位一般用bit、B、KB、MB、GB、TB、PB、EB、ZB、YB、BB、NB、DB……来表示,1024进位。</p>
+</blockquote>
+<h4 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h4><h5 id="环境变量的概念"><a href="#环境变量的概念" class="headerlink" title="环境变量的概念"></a>环境变量的概念</h5><blockquote>
+<p>环境变量是在操作系统中一个具有特定名字的对象，相当于给系统或用户应用程序设置的一些参数，它包含了一个或者多个应用程序所将使用到的信息。</p>
+</blockquote>
+<h5 id="环境变量的用途"><a href="#环境变量的用途" class="headerlink" title="环境变量的用途"></a>环境变量的用途</h5><blockquote>
+<p>例如Windows和DOS操作系统中的path环境变量，当要求系统运行一个程序而没有告诉它程序所在的完整路径时，系统除了在当前目录下面寻找此程序外，还应到path中指定的路径去找。用户通过设置环境变量，来更好的运行进程。</p>
+</blockquote>
+<h5 id="环境变量的设置"><a href="#环境变量的设置" class="headerlink" title="环境变量的设置"></a>环境变量的设置</h5><blockquote>
+<p>在windows操作系统中可以通过我的电脑-〉系统属性-〉高级系统设置-&gt;环境变量，来设置系统的环境变量。</p>
+</blockquote>
+<p><img src="http://q7moybpn9.bkt.clouddn.com/FrZR6MsxYRi1BNsN4dbB3ndOSjdO" alt=""></p>
+<p><img src="http://q7moybpn9.bkt.clouddn.com/Fg-DffF1PAXcBqiXdJHH_NZhy1KG" alt=""></p>
+<p><img src="http://q7moybpn9.bkt.clouddn.com/Fn5WgqIvkmIIIPKJfHfimxuFxaYa" alt=""></p>
+
       
 
       
@@ -257,8 +379,6 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="Xpath-的简单练习"><a href="#Xpath-的简单练习" class="headerlink" title="Xpath 的简单练习"></a>Xpath 的简单练习</h1><p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcxckj58ltj31020lak3q.jpg" alt=""></p>
-<p><strong>需求：根据输入的起始页码，获取好段子网的段子名称、内容和评价，并保存在文档中。</strong></p>
-<h2 id="定义主函数，构建请求"><a href="#定义主函数，构建请求" class="headerlink" title="定义主函数，构建请求"></a>定义主函数，构建请求</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    start_page = int(input(<span class="string">'请输入开始页码：'</span>))</span><br><span class="line">    end_page = int(input(<span class="string">'请输入结束页码：'</span>))</span><br><span class="line">    url = <span class="string">'http://www.haoduanzi.com/category/?1-&#123;&#125;.html'</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> page <span class="keyword">in</span> range(start_page,end_page+<span class="number">1</span>):  <span class="comment">## 不要忘了+1</span></span><br><span class="line">        request = handle_request(url,page)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
         
       
 
@@ -312,68 +432,6 @@
 
 
   
-    <article id="post-taobao" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/22/taobao/">taobao</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/22/taobao/" class="archive-article-date">
-  	<time datetime="2020-03-22T03:09:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/22/taobao/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-我的第一篇博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -381,97 +439,74 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/14/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">我的第一篇博客</a>
+      <a class="article-title" href="/2020/03/22/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">搭建Hexo博客</a>
     </h1>
   
 
         
-        <a href="/2020/03/14/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2020-03-14T05:58:00.161Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-14</time>
+        <a href="/2020/03/22/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
+  	<time datetime="2020-03-22T03:09:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-22</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一、搭建Hexo环境"><a href="#一、搭建Hexo环境" class="headerlink" title="一、搭建Hexo环境"></a>一、搭建Hexo环境</h1><h2 id="1、安装Node-js"><a href="#1、安装Node-js" class="headerlink" title="1、安装Node.js"></a>1、安装Node.js</h2><p>下载Node.js并安装，安装完成后有两个东西，Node.js，npm<br>到终端，先切换到root用户<br>sudo  su<br>查询一下版本号<br>node -v<br>npm -v</p>
+        <a id="more"></a>
+<h1 id="一、搭建Hexo环境"><a href="#一、搭建Hexo环境" class="headerlink" title="一、搭建Hexo环境"></a>一、搭建Hexo环境</h1><h2 id="1、安装Node-js"><a href="#1、安装Node-js" class="headerlink" title="1、安装Node.js"></a>1、安装Node.js</h2><p>下载Node.js并安装，安装完成后有两个东西，Node.js，npm<br>到终端，先切换到root用户<br>sudo  su<br>查询一下版本号<br>node -v<br>npm -v</p>
 <p>如果没问题就已经把Node.js安装好了</p>
 <h2 id="2、安装npm国内镜像源"><a href="#2、安装npm国内镜像源" class="headerlink" title="2、安装npm国内镜像源"></a>2、安装npm国内镜像源</h2><p>在root用户下</p>
-        
-      
+<!--more-->
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=http<span class="variable">s:</span>//registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/14/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">展开全文 >></a>
-        </p>
-      
+<h2 id="3、安装Hexo博客框架"><a href="#3、安装Hexo博客框架" class="headerlink" title="3、安装Hexo博客框架"></a>3、安装Hexo博客框架</h2><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure>
 
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
+<h1 id="二、配置Hexo博客"><a href="#二、配置Hexo博客" class="headerlink" title="二、配置Hexo博客"></a>二、配置Hexo博客</h1><h2 id="1、配置博客文件夹"><a href="#1、配置博客文件夹" class="headerlink" title="1、配置博客文件夹"></a>1、配置博客文件夹</h2><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> blog</span><br><span class="line"><span class="keyword">cd</span> blog/</span><br></pre></td></tr></table></figure>
 
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
+<h2 id="2、使用Hexo生成博客"><a href="#2、使用Hexo生成博客" class="headerlink" title="2、使用Hexo生成博客"></a>2、使用Hexo生成博客</h2><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo hexo init</span><br></pre></td></tr></table></figure>
+
+<p>查看安装好的目录</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ls</span> -<span class="keyword">l</span></span><br></pre></td></tr></table></figure>
+
+<p>启动博客</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<p>在本地预览</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhos<span class="variable">t:4000</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="3、新建一篇博客文章"><a href="#3、新建一篇博客文章" class="headerlink" title="3、新建一篇博客文章"></a>3、新建一篇博客文章</h2><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo n <span class="string">"balabala"</span></span><br></pre></td></tr></table></figure>
+
+<p>往博客里面添加一些内容，先切到博客文章的目录</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> <span class="keyword">source</span>/_posts/</span><br><span class="line"><span class="keyword">vim</span> balbala.md</span><br></pre></td></tr></table></figure>
+
+<p>编辑完之后，返回到blog文件夹，重新生成一下</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> ../..</span><br><span class="line">hexo clean</span><br><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+
+<h1 id="三、把博客部署到GitHub"><a href="#三、把博客部署到GitHub" class="headerlink" title="三、把博客部署到GitHub"></a>三、把博客部署到GitHub</h1><h2 id="1、在GitHub新建一个仓库"><a href="#1、在GitHub新建一个仓库" class="headerlink" title="1、在GitHub新建一个仓库"></a>1、在GitHub新建一个仓库</h2><p>昵称.github.io</p>
+<h2 id="2、安装Git部署插件"><a href="#2、安装Git部署插件" class="headerlink" title="2、安装Git部署插件"></a>2、安装Git部署插件</h2><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
+
+<h2 id="3、配置-config-yml文件"><a href="#3、配置-config-yml文件" class="headerlink" title="3、配置_config.yml文件"></a>3、配置_config.yml文件</h2><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>: git</span><br><span class="line">rego: 仓库地址</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure>
+
+<h2 id="4、部署到远端"><a href="#4、部署到远端" class="headerlink" title="4、部署到远端"></a>4、部署到远端</h2><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<p>会提示输入账号和密码</p>
+<h1 id="四、更换博客主题"><a href="#四、更换博客主题" class="headerlink" title="四、更换博客主题"></a>四、更换博客主题</h1><h2 id="1、下载主题"><a href="#1、下载主题" class="headerlink" title="1、下载主题"></a>1、下载主题</h2><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone http<span class="variable">s:</span>//github.<span class="keyword">com</span>/litten/hexo-theme-yilia.git themes/yilia</span><br></pre></td></tr></table></figure>
+
+<h2 id="2、重新配置博客主题"><a href="#2、重新配置博客主题" class="headerlink" title="2、重新配置博客主题"></a>2、重新配置博客主题</h2><p>修改_config.yml文件</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">theme:yilia</span><br><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<p><strong>后期修改博客内容后，hexo d 报错的时候输入以下代码</strong></p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
 
 
 
 
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/13/hello-world/">Hello World</a>
-    </h1>
-  
 
-        
-        <a href="/2020/03/13/hello-world/" class="archive-article-date">
-  	<time datetime="2020-03-13T14:10:07.320Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
       
 
@@ -481,10 +516,21 @@
       
       
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/others//" class="article-tag-list-link color2">others</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/13/hello-world/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/03/22/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">展开全文 >></a>
         </p>
       
 
