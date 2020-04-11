@@ -16,7 +16,7 @@
 <meta property="og:description" content="第4天  运算符">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-04-11T01:04:02.000Z">
-<meta property="article:modified_time" content="2020-04-11T01:05:13.688Z">
+<meta property="article:modified_time" content="2020-04-11T02:06:54.504Z">
 <meta property="article:author" content="hehongfeng">
 <meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
@@ -190,7 +190,7 @@
 <p>今日作业：</p>
 <p>‘ax’&lt;’xa’ 为Ture还是False？</p>
 <blockquote>
-<p>Ture  两个字符串大小的运算比较，首先是比较第一位，看第一位的ASCII谁大，如果相等再比较第二位，以此类推。通过查询可知（ord），a的ASCII码是97，x的ASCII码为120，所以‘ax’&lt;’xa’ 为Ture。</p>
+<p>Ture  .两个字符串大小的运算比较，首先是比较第一位，看第一位的ASCII码谁大，如果相等再比较第二位，以此类推。通过查询可知（ord），a的ASCII码是97，x的ASCII码为120，所以‘ax’&lt;’xa’ 为Ture。</p>
 </blockquote>
 <p>验证‘ax’&lt;’aa’,输出结果为：False</p>
 <blockquote>
@@ -218,13 +218,13 @@
 <li><p>比较的内容不同，<strong>is</strong>是同一性运算符，是比较对象间的唯一性标识，也就是ID是否相同，<strong>==</strong>叫做比较操作符，是比较两个对象的值是否相同。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = y = [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>z = [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x == y</span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x == z</span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x <span class="keyword">is</span> y</span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x <span class="keyword">is</span> z</span><br><span class="line"><span class="literal">False</span></span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> id(x)</span><br><span class="line"><span class="number">3075326572</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> id(y)</span><br><span class="line"><span class="number">3075326572</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> id(z)</span><br><span class="line"><span class="number">3075328140</span></span><br></pre></td></tr></table></figure>
 
-<p><strong>总的来说，只有数值型和字符串型，并且在通用对象池中的情况下，a is b才为True，否则当a和b是int，str，tuple，list，dict或set型时，a is b均为False。</strong></p>
+<p><strong>总的来说，只有数值型和字符串型（还有元组），并且在通用对象池中的情况下，a is b才为True。</strong></p>
 <p>上课的时候老师也讲了是因为ID不同，所以 x is z 是 False。但是问题是x和z 的ID为什么不同，x和y的ID为什么就相同？</p>
-<p>老师是领路人，修行还得靠个人啊，咱们来百度一下啥是ID。</p>
+<p>师傅领进门，修行还得靠个人啊，咱们来百度一下啥是ID。</p>
 <p><strong>通俗一点的理解，python万物皆对象，对象又分为可变对象和不可变对象，他们的存储机制是不一样的。可变对象是相互独立的，有独立的存储空间，不可变对象，他们就没有独立的存储空间，所以他们的Value相等，那他们所占的空间也就是ID必然相等，现在只要记住数值类型（整数和浮点）、字符串str、元组tuple都是不可变类型，他们的ID和Value是一样的，其他的数据类型不同，就可以了（x=y=[],这种写法应该是限定了是同一存储空间）。感兴趣的具体可以参考下面两篇文章👇</strong></p>
 </li>
 </ul>
-<p>参考：<a href="https://www.cnblogs.com/CheeseZH/p/5260560.html（这个文章里面有个坑，可以自己找一下）" target="_blank" rel="noopener">https://www.cnblogs.com/CheeseZH/p/5260560.html（这个文章里面有个坑，可以自己找一下）</a></p>
+<p>参考：<a href="https://www.cnblogs.com/CheeseZH/p/5260560.html（这个文章里面有坑，可以自己找一下）" target="_blank" rel="noopener">https://www.cnblogs.com/CheeseZH/p/5260560.html（这个文章里面有坑，可以自己找一下）</a></p>
 <p>​           <a href="https://blog.csdn.net/fragmentalice/article/details/81363494" target="_blank" rel="noopener">https://blog.csdn.net/fragmentalice/article/details/81363494</a></p>
 </blockquote>
 <p>现在有a b c三个变量，三个变量中分别保存有三个数值，请通过<strong>条件运算符</strong>获取三个值中的最大值。</p>
