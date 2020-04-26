@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>搭建Hexo博客 | My Hexo</title>
+  <title>Python基础课第8课 | My Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="搭建Hexo博客">
+  <meta name="description" content="函数二">
 <meta property="og:type" content="article">
-<meta property="og:title" content="搭建Hexo博客">
-<meta property="og:url" content="http://yoursite.com/2020/03/22/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/index.html">
+<meta property="og:title" content="Python基础课第8课">
+<meta property="og:url" content="http://yoursite.com/2020/04/26/%E5%87%BD%E6%95%B0%E4%BA%8C/index.html">
 <meta property="og:site_name" content="My Hexo">
-<meta property="og:description" content="搭建Hexo博客">
+<meta property="og:description" content="函数二">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-03-22T03:09:02.000Z">
-<meta property="article:modified_time" content="2020-04-02T13:03:11.824Z">
+<meta property="article:published_time" content="2020-04-26T11:19:02.000Z">
+<meta property="article:modified_time" content="2020-04-26T15:20:13.347Z">
 <meta property="article:author" content="hehongfeng">
 <meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
@@ -164,82 +164,69 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-我的第一篇博客" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-函数二" class="article article-type-post " itemscope itemprop="blogPost">
     <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      搭建Hexo博客
+      Python基础课第8课
     </h1>
   
 
         
-        <a href="/2020/03/22/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2020-03-22T03:09:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-22</time>
+        <a href="/2020/04/26/%E5%87%BD%E6%95%B0%E4%BA%8C/" class="archive-article-date">
+  	<time datetime="2020-04-26T11:19:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>搭建Hexo博客</p>
-<a id="more"></a>
-<h1 id="一、搭建Hexo环境"><a href="#一、搭建Hexo环境" class="headerlink" title="一、搭建Hexo环境"></a>一、搭建Hexo环境</h1><h2 id="1、安装Node-js"><a href="#1、安装Node-js" class="headerlink" title="1、安装Node.js"></a>1、安装Node.js</h2><p>下载Node.js并安装，安装完成后有两个东西，Node.js，npm<br>到终端，先切换到root用户<br>sudo  su<br>查询一下版本号<br>node -v<br>npm -v</p>
-<p>如果没问题就已经把Node.js安装好了</p>
-<h2 id="2、安装npm国内镜像源"><a href="#2、安装npm国内镜像源" class="headerlink" title="2、安装npm国内镜像源"></a>2、安装npm国内镜像源</h2><p>在root用户下</p>
-<!--more-->
+        <h4 id="函数二"><a href="#函数二" class="headerlink" title="函数二"></a>函数二</h4><a id="more"></a>
 
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=http<span class="variable">s:</span>//registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+<h5 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a>函数的返回值</h5><blockquote>
+<p>返回值是函数执行以后返回的结果，用关键字return。返回值后面可以跟任意对象，甚至是一个函数。返回值和参数一样，返回的是一个对象引用，主要看返回的是可变对象还是不可变对象。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="function"><span class="keyword">def</span> <span class="title">fn</span><span class="params">()</span>:</span></span><br><span class="line">   <span class="comment"># return 'Hello'</span></span><br><span class="line">   <span class="comment"># return [1,2,3]</span></span><br><span class="line">   <span class="comment"># return &#123;'k':'v'&#125;</span></span><br><span class="line">   <span class="function"><span class="keyword">def</span> <span class="title">fn2</span><span class="params">()</span>:</span></span><br><span class="line">       print(<span class="string">'hello'</span>)</span><br><span class="line">   <span class="keyword">return</span> fn2  <span class="comment"># 返回值也可以是一个函数</span></span><br><span class="line">&gt;b = fn()  <span class="comment"># 这个函数的执行结果就是它的返回值fn2</span></span><br><span class="line">&gt;print(fn())</span><br><span class="line">&gt;print(b)</span><br></pre></td></tr></table></figure>
 
-<h2 id="3、安装Hexo博客框架"><a href="#3、安装Hexo博客框架" class="headerlink" title="3、安装Hexo博客框架"></a>3、安装Hexo博客框架</h2><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-
-<h1 id="二、配置Hexo博客"><a href="#二、配置Hexo博客" class="headerlink" title="二、配置Hexo博客"></a>二、配置Hexo博客</h1><h2 id="1、配置博客文件夹"><a href="#1、配置博客文件夹" class="headerlink" title="1、配置博客文件夹"></a>1、配置博客文件夹</h2><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> blog</span><br><span class="line"><span class="keyword">cd</span> blog/</span><br></pre></td></tr></table></figure>
-
-<h2 id="2、使用Hexo生成博客"><a href="#2、使用Hexo生成博客" class="headerlink" title="2、使用Hexo生成博客"></a>2、使用Hexo生成博客</h2><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo hexo init</span><br></pre></td></tr></table></figure>
-
-<p>查看安装好的目录</p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ls</span> -<span class="keyword">l</span></span><br></pre></td></tr></table></figure>
-
-<p>启动博客</p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-
-<p>在本地预览</p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhos<span class="variable">t:4000</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="3、新建一篇博客文章"><a href="#3、新建一篇博客文章" class="headerlink" title="3、新建一篇博客文章"></a>3、新建一篇博客文章</h2><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo n <span class="string">"balabala"</span></span><br></pre></td></tr></table></figure>
-
-<p>往博客里面添加一些内容，先切到博客文章的目录</p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> <span class="keyword">source</span>/_posts/</span><br><span class="line"><span class="keyword">vim</span> balbala.md</span><br></pre></td></tr></table></figure>
-
-<p>编辑完之后，返回到blog文件夹，重新生成一下</p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> ../..</span><br><span class="line">hexo clean</span><br><span class="line">hexo g</span><br></pre></td></tr></table></figure>
-
-<h1 id="三、把博客部署到GitHub"><a href="#三、把博客部署到GitHub" class="headerlink" title="三、把博客部署到GitHub"></a>三、把博客部署到GitHub</h1><h2 id="1、在GitHub新建一个仓库"><a href="#1、在GitHub新建一个仓库" class="headerlink" title="1、在GitHub新建一个仓库"></a>1、在GitHub新建一个仓库</h2><p>昵称.github.io</p>
-<h2 id="2、安装Git部署插件"><a href="#2、安装Git部署插件" class="headerlink" title="2、安装Git部署插件"></a>2、安装Git部署插件</h2><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
-
-<h2 id="3、配置-config-yml文件"><a href="#3、配置-config-yml文件" class="headerlink" title="3、配置_config.yml文件"></a>3、配置_config.yml文件</h2><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>: git</span><br><span class="line">rego: 仓库地址</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure>
-
-<h2 id="4、部署到远端"><a href="#4、部署到远端" class="headerlink" title="4、部署到远端"></a>4、部署到远端</h2><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
-<p>会提示输入账号和密码</p>
-<h1 id="四、更换博客主题"><a href="#四、更换博客主题" class="headerlink" title="四、更换博客主题"></a>四、更换博客主题</h1><h2 id="1、下载主题"><a href="#1、下载主题" class="headerlink" title="1、下载主题"></a>1、下载主题</h2><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone http<span class="variable">s:</span>//github.<span class="keyword">com</span>/litten/hexo-theme-yilia.git themes/yilia</span><br></pre></td></tr></table></figure>
-
-<h2 id="2、重新配置博客主题"><a href="#2、重新配置博客主题" class="headerlink" title="2、重新配置博客主题"></a>2、重新配置博客主题</h2><p>修改_config.yml文件</p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">theme:yilia</span><br><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
-<p><strong>后期修改博客内容后，hexo d 报错的时候输入以下代码</strong></p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
+<p>打印结果</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;D:\ProgramData\Anaconda3\envs\untitled\python.exe C:/Users/Administrator/PycharmProjects/untitled/<span class="number">04</span>day/<span class="number">1111.</span>py</span><br><span class="line">&gt;&lt;function fn.&lt;locals&gt;.fn2 at <span class="number">0x0000000001E01708</span>&gt;    <span class="comment">#对象一样，地址不一样</span></span><br><span class="line">&gt;&lt;function fn.&lt;locals&gt;.fn2 at <span class="number">0x0000000001E01678</span>&gt;</span><br><span class="line"></span><br><span class="line">&gt;Process finished <span class="keyword">with</span> exit code <span class="number">0</span></span><br></pre></td></tr></table></figure>
 
 
 
+<h6 id="函数返回值的作用："><a href="#函数返回值的作用：" class="headerlink" title="函数返回值的作用："></a>函数返回值的作用：</h6><p>函数运算的结果，还需要进一步操作的时候，给函数一个返回值 return，用来返回函数执行的结果，如果函数没有返回值，默认返回None。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="function"><span class="keyword">def</span> <span class="title">my</span><span class="params">(x,y=<span class="number">2</span>)</span>:</span></span><br><span class="line">   print(x+y)</span><br><span class="line">&gt;a = my(<span class="number">2</span>,<span class="number">4</span>)</span><br><span class="line">&gt;print(a)</span><br></pre></td></tr></table></figure>
 
-
-
-
-
-
+<p>结果会打印2个</p>
+<p>6和None（因为没有返回值，所以打印一个None）</p>
+<p><strong>一旦遇到return 函数执行结束，后面的代码不会执行</strong></p>
+<p><strong>有多个返回值的时候</strong>，python会帮我们封装成一个<strong>元组</strong>类型。</p>
+<p><strong><em>定义函数时加文档字符串对函数进行说明</em></strong></p>
+</blockquote>
+<h4 id="函数的作用域"><a href="#函数的作用域" class="headerlink" title="函数的作用域"></a>函数的作用域</h4><blockquote>
+<p>函数的作用域就是函数变量生效的区域。</p>
+<h5 id="全局作用域"><a href="#全局作用域" class="headerlink" title="全局作用域"></a>全局作用域</h5><p>在全局作用域中定义的变量，都是全局变量，全局变量可以在程序的任意位置进行访问。<br>在函数体外定义的变量，一定是全局变量<br>在函数体内定义全局变量。即使用 global 关键字对变量进行修饰后，该变量就会变为全局变量。</p>
+<h6 id="函数作用域"><a href="#函数作用域" class="headerlink" title="函数作用域"></a>函数作用域</h6><p>在函数作用域中定义的变量，都是局部变量。当函数被执行时，Python 会为其分配一块临时的存储空间，所有在函数内部定义的变量，都会存储在这块空间中。而在函数执行完毕后，这块临时存储空间随即会被释放并回收，该空间中存储的变量自然也就无法再被使用。</p>
+<h6 id="获取指定作用域范围中的变量"><a href="#获取指定作用域范围中的变量" class="headerlink" title="获取指定作用域范围中的变量"></a>获取指定作用域范围中的变量</h6><p>globals()函数</p>
+<p>globals() 函数为 Python 的内置函数，它可以返回一个包含全局范围内所有变量的字典，该字典中的每个键值对，键为变量名，值为该变量的值。</p>
+<p>locals()函数</p>
+<p>locals() 函数也是 Python 内置函数之一，通过调用该函数，我们可以得到一个包含当前作用域内所有变量的字典。这里所谓的“当前作用域”指的是，在函数内部调用 locals() 函数，会获得包含所有局部变量的字典；而在全局范文内调用 locals() 函数，其功能和 globals() 函数相同。</p>
+</blockquote>
+<h4 id="递归函数"><a href="#递归函数" class="headerlink" title="递归函数"></a>递归函数</h4><blockquote>
+<h6 id="递归式函数有2个条件"><a href="#递归式函数有2个条件" class="headerlink" title="递归式函数有2个条件"></a>递归式函数有2个条件</h6><ul>
+<li><p>在函数内部，可以调用其他函数。如果一个函数在内部调用自身本身，这个函数就是递归函数。</p>
+</li>
+<li><p>1、基线条件 问题可以被分解为最小问题，当满足基线条件时，递归就不执行了<br>2、递归条件 可以将问题继续分解的条件，递归函数应有相同的逻辑</p>
+</li>
+</ul>
+</blockquote>
+<p>课程大纲：</p>
+<p><a href="https://www.yuque.com/docs/share/0da4dd02-564b-49ea-bc57-6f29560f26f3?#" target="_blank" rel="noopener">https://www.yuque.com/docs/share/0da4dd02-564b-49ea-bc57-6f29560f26f3?#</a></p>
+<p>参考资料：</p>
+<p>1、<a href="https://www.jianshu.com/p/fe26afef8c8e" target="_blank" rel="noopener">https://www.jianshu.com/p/fe26afef8c8e</a></p>
+<p>2、<a href="https://blog.csdn.net/qq_45034392/article/details/100753164" target="_blank" rel="noopener">https://blog.csdn.net/qq_45034392/article/details/100753164</a></p>
+<p>3、<a href="http://c.biancheng.net/view/2259.html" target="_blank" rel="noopener">http://c.biancheng.net/view/2259.html</a></p>
 
       
 
@@ -275,7 +262,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/others//" class="article-tag-list-link color2">others</a>
+        			<a href="/categories/python基础课//" class="article-tag-list-link color5">python基础课</a>
         		</li>
       		
 		</ul>
@@ -330,7 +317,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/22/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/26/%E5%87%BD%E6%95%B0%E4%BA%8C/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -344,15 +331,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/03/22/Xpath%20%E7%9A%84%E7%AE%80%E5%8D%95%E7%BB%83%E4%B9%A0/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Xpath练习
-        
-      </div>
-    </a>
   
+    <a href="/2020/04/23/%E9%9B%86%E5%90%88%E4%B8%8E%E5%87%BD%E6%95%B0%EF%BC%88%E4%B8%80%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python基础课第8课</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -377,7 +360,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、搭建Hexo环境"><span class="toc-number">1.</span> <span class="toc-text">一、搭建Hexo环境</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、安装Node-js"><span class="toc-number">1.1.</span> <span class="toc-text">1、安装Node.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、安装npm国内镜像源"><span class="toc-number">1.2.</span> <span class="toc-text">2、安装npm国内镜像源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、安装Hexo博客框架"><span class="toc-number">1.3.</span> <span class="toc-text">3、安装Hexo博客框架</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、配置Hexo博客"><span class="toc-number">2.</span> <span class="toc-text">二、配置Hexo博客</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、配置博客文件夹"><span class="toc-number">2.1.</span> <span class="toc-text">1、配置博客文件夹</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、使用Hexo生成博客"><span class="toc-number">2.2.</span> <span class="toc-text">2、使用Hexo生成博客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、新建一篇博客文章"><span class="toc-number">2.3.</span> <span class="toc-text">3、新建一篇博客文章</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、把博客部署到GitHub"><span class="toc-number">3.</span> <span class="toc-text">三、把博客部署到GitHub</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、在GitHub新建一个仓库"><span class="toc-number">3.1.</span> <span class="toc-text">1、在GitHub新建一个仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、安装Git部署插件"><span class="toc-number">3.2.</span> <span class="toc-text">2、安装Git部署插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、配置-config-yml文件"><span class="toc-number">3.3.</span> <span class="toc-text">3、配置_config.yml文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、部署到远端"><span class="toc-number">3.4.</span> <span class="toc-text">4、部署到远端</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、更换博客主题"><span class="toc-number">4.</span> <span class="toc-text">四、更换博客主题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、下载主题"><span class="toc-number">4.1.</span> <span class="toc-text">1、下载主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、重新配置博客主题"><span class="toc-number">4.2.</span> <span class="toc-text">2、重新配置博客主题</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#函数二"><span class="toc-number">1.</span> <span class="toc-text">函数二</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#函数的返回值"><span class="toc-number">1.1.</span> <span class="toc-text">函数的返回值</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#函数返回值的作用："><span class="toc-number">1.1.1.</span> <span class="toc-text">函数返回值的作用：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#函数的作用域"><span class="toc-number">2.</span> <span class="toc-text">函数的作用域</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#全局作用域"><span class="toc-number">2.1.</span> <span class="toc-text">全局作用域</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#函数作用域"><span class="toc-number">2.1.1.</span> <span class="toc-text">函数作用域</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#获取指定作用域范围中的变量"><span class="toc-number">2.1.2.</span> <span class="toc-text">获取指定作用域范围中的变量</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#递归函数"><span class="toc-number">3.</span> <span class="toc-text">递归函数</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#递归式函数有2个条件"><span class="toc-number">3.0.1.</span> <span class="toc-text">递归式函数有2个条件</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
