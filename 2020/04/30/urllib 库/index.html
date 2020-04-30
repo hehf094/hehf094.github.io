@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | My Hexo</title>
+  <title>Python爬虫1 | My Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="My Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/page/2/index.html">
+  <meta name="description" content="urllib 库的使用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python爬虫1">
+<meta property="og:url" content="http://yoursite.com/2020/04/30/urllib%20%E5%BA%93/index.html">
 <meta property="og:site_name" content="My Hexo">
+<meta property="og:description" content="urllib 库的使用">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-04-30T03:19:02.000Z">
+<meta property="article:modified_time" content="2020-04-30T03:10:36.830Z">
 <meta property="article:author" content="hehongfeng">
 <meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
@@ -160,139 +164,224 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-urllib 库" class="article article-type-post " itemscope itemprop="blogPost">
+    <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python爬虫1
+    </h1>
+  
+
+        
+        <a href="/2020/04/30/urllib%20%E5%BA%93/" class="archive-article-date">
+  	<time datetime="2020-04-30T03:19:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-30</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="urllib-库的使用"><a href="#urllib-库的使用" class="headerlink" title="urllib 库的使用"></a>urllib 库的使用</h4><a id="more"></a>
+
+<p>需求：模拟利用百度贴吧输入关键词，并且输入选择下载的开始页和结束页，把所搜的结果保存在本地文件中。并把这个功能转换成函数和类。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#   https://tieba.baidu.com/f?ie=utf-8&amp;kw=python&amp;fr=search   随便输入一个关键词，找到请求的url</span></span><br><span class="line"><span class="comment">#   https://tieba.baidu.com/f?kw=python&amp;ie=utf-8&amp;pn=50</span></span><br><span class="line"><span class="comment">#   https://tieba.baidu.com/f?kw=python&amp;ie=utf-8&amp;pn=100 。。。。往后翻两页，找到翻页规律</span></span><br><span class="line"><span class="comment">#   可见，关键词是kw   第一页是pn=0  pn=(n-1)*50</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"><span class="keyword">import</span> urllib.parse</span><br><span class="line"></span><br><span class="line">Input = input(<span class="string">'请输入要查询的关键词：'</span>)</span><br><span class="line">start_page = int(input(<span class="string">'请输入要查询的开始页码：'</span>))</span><br><span class="line">end_page = int(input(<span class="string">'请输入要查询的结束页码：'</span>))</span><br><span class="line">url = <span class="string">'https://tieba.baidu.com/f?'</span>    <span class="comment">#提取url</span></span><br><span class="line"><span class="keyword">for</span> page <span class="keyword">in</span> range(start_page,end_page+<span class="number">1</span>):</span><br><span class="line"></span><br><span class="line">    data = &#123;</span><br><span class="line">    <span class="string">'kw'</span>:Input,</span><br><span class="line">    <span class="string">'pn'</span>:(page<span class="number">-1</span>)*<span class="number">50</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># 编码输入的关键字，并拼接url</span></span><br><span class="line">    url_last = urllib.parse.urlencode(data)</span><br><span class="line">    new_url = url +<span class="string">'&amp;'</span>+url_last</span><br><span class="line"></span><br><span class="line"><span class="comment"># 构建请求对象</span></span><br><span class="line">    headers = &#123;</span><br><span class="line">    <span class="string">'User-Agent'</span>: <span class="string">'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.92 Safari/537.36'</span>,</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">    req = urllib.request.Request(url=new_url, headers=headers)</span><br><span class="line">    <span class="comment">#发送请求,获取响应</span></span><br><span class="line">    rsp = urllib.request.urlopen(req).read().decode(<span class="string">'utf-8'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">#写入文件</span></span><br><span class="line">    file_name = str(page) + <span class="string">'.html'</span></span><br><span class="line">    <span class="keyword">with</span> open(file_name,<span class="string">'w'</span>,encoding=<span class="string">'utf8'</span>) <span class="keyword">as</span> fp:</span><br><span class="line">        fp.write(rsp)</span><br></pre></td></tr></table></figure>
+
+<p>几点需要注意的：</p>
+<ol>
+<li>parse的作用是用来编码和解码的，urlencode的参数是字典，quote的参数是字符串</li>
+<li>url拼接字符串和数字都有的时候要统一一下</li>
+<li>写入文件用w参数</li>
+<li>逻辑顺序是先找到目标url，在构建请求对象(加上head头部信息)，在发送请求获取响应，在保存响应信息。</li>
+<li>检查里面的Sources是显示的整个网页的架构，并不是网页的实际信息，有的信息是通过动态加载的，里面不显示。Elements显示的是当前页面的信息。</li>
+<li>请求方式普遍的有两种，get和post，post一般用来提交表单，并不会再浏览器地址中显示。get请求会显示在地址栏里。</li>
+</ol>
+<p>把这个功能封装成函数，就把需要输入的几个数据作为参数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">webSpide</span><span class="params">(Input,start_page,end_page)</span>:</span></span><br><span class="line">    <span class="keyword">import</span> urllib.request</span><br><span class="line">    <span class="keyword">import</span> urllib.parse</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Input = input('请输入要查询的关键词：')</span></span><br><span class="line">    <span class="comment"># start_page = int(input('请输入要查询的开始页码：'))</span></span><br><span class="line">    <span class="comment"># end_page = int(input('请输入要查询的结束页码：'))</span></span><br><span class="line">    url = <span class="string">'https://tieba.baidu.com/f?'</span>  <span class="comment"># 提取url</span></span><br><span class="line">    <span class="keyword">for</span> page <span class="keyword">in</span> range(start_page, end_page + <span class="number">1</span>):</span><br><span class="line">        data = &#123;</span><br><span class="line">            <span class="string">'kw'</span>: Input,</span><br><span class="line">            <span class="string">'pn'</span>: (page - <span class="number">1</span>) * <span class="number">50</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment"># 编码输入的关键字，并拼接url</span></span><br><span class="line">        url_last = urllib.parse.urlencode(data)</span><br><span class="line">        new_url = url + <span class="string">'&amp;'</span> + url_last</span><br><span class="line"></span><br><span class="line">        <span class="comment"># # 构建请求对象</span></span><br><span class="line">        headers = &#123;</span><br><span class="line">            <span class="string">'User-Agent'</span>: <span class="string">'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.92 Safari/537.36'</span>,</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        req = urllib.request.Request(url=new_url, headers=headers)</span><br><span class="line">        <span class="comment"># 发送请求</span></span><br><span class="line">        rsp = urllib.request.urlopen(req).read().decode(<span class="string">'utf-8'</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 写入文件</span></span><br><span class="line">        file_name = str(page) + <span class="string">'.html'</span></span><br><span class="line">        <span class="keyword">with</span> open(file_name, <span class="string">'w'</span>, encoding=<span class="string">'utf8'</span>) <span class="keyword">as</span> fp:</span><br><span class="line">            fp.write(rsp)</span><br><span class="line"></span><br><span class="line">webSpide(<span class="string">'python'</span>,<span class="number">1</span>,<span class="number">3</span>)   <span class="comment">#调用函数</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>转换成一个类的思路，因为类里面有方法，方法也是实现一个功能，就直接调用这个功能</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">web_spide</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(Input,start_page,end_page)</span>:</span></span><br><span class="line">        <span class="keyword">import</span> urllib.request</span><br><span class="line">        <span class="keyword">import</span> urllib.parse</span><br><span class="line">        url = <span class="string">'https://tieba.baidu.com/f?'</span>  <span class="comment"># 提取url</span></span><br><span class="line">        <span class="keyword">for</span> page <span class="keyword">in</span> range(start_page, end_page + <span class="number">1</span>):</span><br><span class="line">            data = &#123;</span><br><span class="line">                <span class="string">'kw'</span>: Input,</span><br><span class="line">                <span class="string">'pn'</span>: (page - <span class="number">1</span>) * <span class="number">50</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment"># 编码输入的关键字，并拼接url</span></span><br><span class="line">            url_last = urllib.parse.urlencode(data)</span><br><span class="line">            new_url = url + <span class="string">'&amp;'</span> + url_last</span><br><span class="line"></span><br><span class="line">            <span class="comment"># # 构建请求对象</span></span><br><span class="line">            headers = &#123;</span><br><span class="line">                <span class="string">'User-Agent'</span>: <span class="string">'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.92 Safari/537.36'</span>,</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            req = urllib.request.Request(url=new_url, headers=headers)</span><br><span class="line">            <span class="comment"># 发送请求</span></span><br><span class="line">            rsp = urllib.request.urlopen(req).read().decode(<span class="string">'utf-8'</span>)</span><br><span class="line"></span><br><span class="line">            <span class="comment"># 写入文件</span></span><br><span class="line">            file_name = str(page) + <span class="string">'.html'</span></span><br><span class="line">            <span class="keyword">with</span> open(file_name, <span class="string">'w'</span>, encoding=<span class="string">'utf8'</span>) <span class="keyword">as</span> fp:</span><br><span class="line">                fp.write(rsp)</span><br><span class="line"></span><br><span class="line">web_spide.func(<span class="string">'python'</span>,<span class="number">1</span>,<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/02/%E7%AC%AC%E4%B8%80%E8%AF%BE%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2020-04-02T03:09:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/02/%E7%AC%AC%E4%B8%80%E8%AF%BE%E7%AC%94%E8%AE%B0/">Python基础课第一课</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/python基础课//" class="article-tag-list-link color5">python基础课</a>
+        			<a href="/categories/python爬虫课//" class="article-tag-list-link color5">python爬虫课</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/30/urllib%20%E5%BA%93/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/22/Xpath%20%E7%9A%84%E7%AE%80%E5%8D%95%E7%BB%83%E4%B9%A0/" class="archive-article-date">
-  	<time datetime="2020-03-22T03:09:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-22</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/04/26/%E5%87%BD%E6%95%B0%E4%BA%8C/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python基础课第9课</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/22/Xpath%20%E7%9A%84%E7%AE%80%E5%8D%95%E7%BB%83%E4%B9%A0/">Xpath练习</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/pythonspide//" class="article-tag-list-link color2">pythonspide</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#urllib-库的使用"><span class="toc-number">1.</span> <span class="toc-text">urllib 库的使用</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/22/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2020-03-22T03:09:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/22/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">搭建Hexo博客</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/others//" class="article-tag-list-link color2">others</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
+
+  <section id="comments" style="margin:10px;padding:10px;background:#fff;">
+     <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'true' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "uilBkYbMaoWeSdiO1xNtYskn-gzGzoHsz",
+            app_key: "ju6JymD7TNpEbfvzTPDDAJwt",
+            placeholder: "有话要说？",
+            avatar:""
+        });
+    }
+</script>
+    </section>
   
+   
   
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&amp;laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-    </nav>
+  
+
+  
+
   
 
 
@@ -323,8 +412,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
